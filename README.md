@@ -3,7 +3,8 @@ vagrant_django
 
 Dead simple Vagrant setup to get started with Django 1.6.x and PostgreSQL.
 
-== Getting started ==
+Getting started
+----
 Requirements
 - [Vagrant 1.4.2+](http://www.vagrantup.com/downloads.html)
 
