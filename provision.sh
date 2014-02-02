@@ -22,3 +22,12 @@ virtualenv --no-site-packages $VE_DIR
 $VE_DIR/bin/pip install -r $CODE_DIR/requirements.txt
 chown -R vagrant $VE_DIR
 chgrp -R vagrant $VE_DIR
+
+#Run syncdb tand create admin user
+if [ ! -e /home/vagrant/.provisioned ]
+then
+    (cd $CODE_DIR/app && $VE_DIR/bin/python manage.py syncdb --noinput)
+    (cd $CODE_DIR/app && $VE_DIR/bin/python manage.py update_admin_user --username=admin --password=vagrant)
+
+    touch /home/vagrant/.provisioned
+fi
