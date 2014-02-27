@@ -1,3 +1,4 @@
 django==1.6.1
 psycopg2==2.5.2
 South==0.8.4
+celery[redis,msgpack]

@@ -13,6 +13,11 @@ easy_install pip
 pip install setuptools --no-use-wheel --upgrade
 pip install virtualenv
 
+#Install redis
+add-apt-repository -y ppa:chris-lea/redis-server
+apt-get update
+apt-get install -y redis-server
+
 #Create postgres user / database
 sudo -u postgres psql -c "CREATE USER vdjango WITH NOCREATEDB NOCREATEUSER ENCRYPTED PASSWORD 'development'"
 sudo -u postgres psql -c "CREATE DATABASE vdjango WITH OWNER vdjango"
